@@ -3,6 +3,13 @@
 
 # In[ ]:
 
+var timeline = [];
+
+var pavlovia_init = '{'
+    type: "pavlovia",
+    command: "init"
+'}';
+timeline.push(pavlovia_init);
 
 print ('Вам будет необходимо найти предметы на изображении, в каждом раунде они будут меняться.')
 print('И написать их количество в поле для ответа')
@@ -212,6 +219,17 @@ elapsed_time10 = end_time - start_time
 print(f'Среднее время реакции: {(elapsed_time1+elapsed_time2+elapsed_time3+elapsed_time4+elapsed_time5+elapsed_time6+elapsed_time7+elapsed_time8+elapsed_time9+elapsed_time10)/10}')
 print(f'Количество правильных ответов: {k}')
 
+
+var pavlovia_finish = '{'
+    type: "pavlovia",
+    command: "finish"
+    '}';
+timeline.push(pavlovia_finish);
+
+jsPsych.init('{'
+    timeline: timeline,
+    [...]
+'}');
 
 # In[ ]:
 
